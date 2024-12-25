@@ -1,0 +1,206 @@
+/* Custom properties for Clash of Clans theme */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --clash-gold: #ffd700;
+  --clash-dark: #2c1810;
+  --clash-brown: #8b4513;
+}
+
+/* Custom font for Clash of Clans theme */
+@font-face {
+  font-family: 'Supercell';
+  src: url('../src/fonts/Supercell.ttf') format('truetype');
+}
+
+/* Apply custom font to all headings */
+h1, h2, h3 {
+  font-family: 'Supercell', sans-serif;
+}
+
+/* Hero section enhancements */
+
+header {
+  background-image: url('./img/coc.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 60vh; /* Adjust height for different devices */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments using media queries */
+@media (max-width: 768px) {
+  header {
+    height: 50vh; /* Reduce height for tablets and smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 40vh; /* Further reduce height for mobile devices */
+    background-size: cover; /* Adjust background to ensure it fits smaller screens */
+  }
+}
+
+
+/* Enhanced text shadow for hero text */
+.text-6xl.text-yellow-400 {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5),
+               0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Button animations */
+.bg-yellow-600 {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.bg-yellow-600:hover {
+  transform: translateY(-2px);
+}
+
+.bg-yellow-600::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    transparent,
+    rgba(255, 215, 0, 0.2),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.bg-yellow-600:hover::after {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Skill bar animations */
+.bg-yellow-400.rounded-full {
+  transition: width 1s ease-out;
+  background: linear-gradient(90deg, #ffd700, #ffb700);
+}
+
+/* Project card enhancements */
+.border-yellow-600 {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.border-yellow-600:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Form input enhancements */
+input, textarea {
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+/* Section background patterns */
+.bg-black\/30 {
+  background-image: 
+    linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%);
+  background-size: 4px 4px;
+}
+
+/* Tech tag enhancements */
+.bg-yellow-600.px-3 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading animation */
+@keyframes skillBarLoad {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text-6xl {
+    font-size: 3rem;
+  }
+  
+  .text-4xl {
+    font-size: 2.5rem;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .bg-black\/40 {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .text-gray-300 {
+    color: #d1d5db;
+  }
+}
+
+/* Print styles */
+@media print {
+  .bg-gradient-to-b {
+    background: none;
+    color: black;
+  }
+  
+  .text-yellow-400 {
+    color: #8b4513;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 4s linear infinite;
+}
+
+
+
+.barbarian-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.barbarian-king {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  .responsive-img {
+    width: 130px;
+    height: 220px;
+  }
+  .responsive {
+    font-size: 12px;
+  }
+}
