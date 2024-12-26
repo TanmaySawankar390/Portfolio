@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { Shield, Gem, Sword} from "lucide-react";
+import { Shield, Gem, Sword, ChevronDown } from "lucide-react";
 
 function Header() {
   const handleResourceClick = (type) => {
@@ -19,10 +19,17 @@ function Header() {
     }
   };
 
+  const handleScrollDown = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="App">
-      <header className="relative h-screen flex items-center justify-center ">
-        <div className="absolute inset-0 bg-black/40" />
+      <header className="relative h-screen flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/60" />
         
         {/* Main Content */}
         <div className="relative z-10 flex flex-col items-center">
@@ -34,7 +41,7 @@ function Header() {
 
           {/* Central Content */}
           <div className="text-center mb-3">
-            <h1 className="text-6xl font-bold mb-4 text-white-400 drop-shadow-lg">
+            <h1 className="text-6xl font-bold mb-4 text-white-400 drop-shadow-lg size">
               Tanmay Sawankar
             </h1>
             <p className="text-2xl text-yellow-200 mb-8">
@@ -88,6 +95,17 @@ function Header() {
 
         {/* Decorative Elements */}
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent" />
+
+        {/* Animated Down Arrow */}
+        <div 
+          onClick={handleScrollDown}
+          className="absolute bottom-8 left-1/1.8 transform -translate-x-1/2 cursor-pointer animate-bounce"
+        >
+          <div className="flex flex-col items-center">
+            <ChevronDown className="w-8 h-8 text-yellow-400" />
+            <ChevronDown className="w-8 h-8 text-yellow-400 -mt-4" />
+          </div>
+        </div>
       </header>
     </div>
   );
