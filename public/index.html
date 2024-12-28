@@ -4,40 +4,210 @@
     <meta charset="utf-8" />
     <link rel="icon" href="./img/1.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="clash of clans portfolio" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="./img/1.jpg" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <meta name="clash of clans portfolio" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="./img/1.jpg" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>TanXPortfolio</title>
+    <style>
+      @font-face {
+        font-family: "Supercell";
+        src: url("../src/fonts/Supercell.ttf") format("truetype");
+      }
+
+      h1, h2, h3 {
+        font-family: "Supercell", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        background: url("img/7.webp");
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+        padding-bottom: 50px;
+      }
+      .loading-bar-container {
+        width: 20%;
+        height: 30px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 2px solid #8a5c1d;
+        border-radius: 15px;
+        padding: 3px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+      .loading-bar {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(to right, #8b5cf6, #d946ef);
+        border-radius: 12px;
+        transition: width 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .loading-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0.2) 75%,
+          transparent 75%
+        );
+        background-size: 30px 30px;
+        animation: loading-animation 1s linear infinite;
+      }
+      @keyframes loading-animation {
+        0% { background-position: 0 0; }
+        100% { background-position: 30px 0; }
+      }
+      .loading-text {
+        color: #fff;
+        font-family: "Supercell", sans-serif;
+        margin-top: 10px;
+      }
+      #root {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+      }
+      #root.loaded {
+        opacity: 1;
+      }
+      @media (max-width: 768px) {
+        #initial-loader {
+          padding-bottom: 10px;
+          background-size: cover;
+          background-position: center;
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+        }
+        .loading-bar-container {
+          width: 80%;
+          height: 20px;
+          padding: 2px;
+        }
+        .loading-bar {
+          border-radius: 10px;
+        }
+        .loading-text {
+          font-size: 18px;
+          margin-top: 5px;
+          text-align: center;
+          padding: 0 10px;
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- Initial Loading Screen -->
+    <div id="initial-loader">
+      <div class="loading-bar-container">
+        <div class="loading-bar" id="loadingBar"></div>
+      </div>
+      <div class="loading-text font-face"><h3>Loading Content...</h3></div>
+    </div>
+
+    <!-- React Root -->
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <script>
+      // Image preloader
+      const backgroundImages = [
+        "img/7.webp",
+        "img/3.webp",
+        "img/5.webp",
+        "img/10.jpg",
+        "img/12.webp",
+        "img/13.webp"
+      ];
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      // Preload all images before starting
+      const preloadImages = () => {
+        const imagePromises = backgroundImages.map(src => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = resolve;
+            img.onerror = reject;
+            img.src = src;
+          });
+        });
+        return Promise.all(imagePromises);
+      };
+
+      let preloadedImages = [];
+      
+      document.addEventListener("DOMContentLoaded", async function () {
+        const loader = document.getElementById("initial-loader");
+        const loadingBar = document.getElementById("loadingBar");
+        const root = document.getElementById("root");
+        let progress = 0;
+
+        // Start preloading images immediately
+        try {
+          await preloadImages();
+          preloadedImages = backgroundImages;
+        } catch (error) {
+          console.error('Error preloading images:', error);
+        }
+
+        // Function to get random image from preloaded images
+        function getRandomImage() {
+          const randomIndex = Math.floor(Math.random() * preloadedImages.length);
+          return preloadedImages[randomIndex];
+        }
+
+        // Set initial background
+        loader.style.backgroundImage = `url('${getRandomImage()}')`;
+
+        // Loading bar animation
+        function updateLoader() {
+          if (progress < 100) {
+            progress += Math.random() * 15;
+            if (progress > 100) progress = 100;
+            loadingBar.style.width = progress + "%";
+
+            if (progress < 100) {
+              setTimeout(updateLoader, 200 + Math.random() * 50);
+            } else {
+              setTimeout(() => {
+                loader.style.opacity = "0";
+                root.classList.add("loaded");
+                setTimeout(() => {
+                  loader.style.display = "none";
+                }, 400);
+              }, 400);
+            }
+          }
+        }
+
+        // Start loading animation
+        updateLoader();
+      });
+    </script>
   </body>
 </html>
