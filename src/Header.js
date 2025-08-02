@@ -5,8 +5,8 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getDatabase, ref, onValue, set, get } from "firebase/database";
 import { BiTrendingUp } from "react-icons/bi";
-import React from "react";
-import { Shield, Gem, Sword, ChevronDown } from "lucide-react";
+// import React from "react";
+// import { Shield, Gem, Sword, ChevronDown } from "lucide-react";
 
 function Header() {
   const [raidCount, setRaidCount] = useState(0);
