@@ -7,7 +7,6 @@
   --clash-dark: #2c1810;
   --clash-brown: #8b4513;
 }
-
 /* Custom font for Clash of Clans theme */
 @font-face {
   font-family: 'Supercell';
@@ -33,6 +32,7 @@ header {
   text-align: center;
   padding: 10px;
   box-sizing: border-box;
+  
 }
 
 /* Responsive adjustments using media queries */
@@ -54,6 +54,7 @@ header {
 .text-6xl.text-yellow-400 {
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5),
                0 0 10px rgba(255, 215, 0, 0.3);
+  font-size:3rem;
 }
 
 /* Button animations */
@@ -203,4 +204,414 @@ input:focus, textarea:focus {
   .responsive {
     font-size: 12px;
   }
+
+}
+
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease-out;
+}
+
+.loading-spinner {
+  width: 100px;
+  height: 100px;
+  border: 8px solid #333;
+  border-top: 8px solid #ffd700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loading-text {
+  color: #fff;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.content {
+  display: none;
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #initial-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            /* background: url("img/7.webp"); */
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Changed from center to flex-end */
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+            padding-bottom: 50px; /* Added padding at the bottom */
+        }
+        .loading-bar-container {
+            width: 20%;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #8a5c1d;
+            border-radius: 15px;
+            padding: 3px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .loading-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(to right, #8B5CF6, #D946EF);
+            border-radius: 12px;
+            transition: width 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                rgba(255,255,255,0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255,255,255,0.2) 50%,
+                rgba(255,255,255,0.2) 75%,
+                transparent 75%
+            );
+            background-size: 30px 30px;
+            animation: loading-animation 1s linear infinite;
+        }
+        @keyframes loading-animation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 30px 0;
+            }
+        }
+        .loading-spinner {
+            width: 100px;
+            height: 100px;
+            border: 8px solid #333;
+            border-top: 8px solid #ffd700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        .loading-text {
+            color: #fff;
+            font-size: 24px;
+            /* font-family: 'Supercell' ; */
+            /* font-family: Arial, sans-serif; */
+            margin-top: 10px; /* Added margin top for spacing */
+        }
+        #root {
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+        #root.loaded {
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+        #initial-loader {
+            padding-bottom: 10px; /* Makes the background image fixed (optional) */ 
+            /* background-image: url("img/3.webp"); Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the image */
+ /* Makes the background image fixed (optional) */
+    width: 100vw; /* Sets the body width to the full viewport width */
+    margin: 0; /* Removes any default margin */
+    padding: 0;/* Sets the body width to the full viewport width */
+             /* Reduced padding for smaller screens */
+        }
+        .loading-bar-container {
+            width: 80%; /* Adjust width to occupy more space on small screens */
+            height: 20px; /* Reduce height for smaller screens */
+            padding: 2px; /* Reduce padding */
+        }
+        .loading-bar {
+            border-radius: 10px; /* Adjust radius for smaller size */
+        }
+        .loading-text {
+            font-size: 18px; /* Smaller font size for mobile devices */
+            margin-top: 5px; /* Adjust spacing */
+            text-align: center; /* Center align text */
+            padding: 0 10px; /* Add horizontal padding for better text visibility */
+        }
+    }
+
+.wave-glass-bg {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.wave-glass-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.2) 100%);
+  z-index: 0;
+  opacity: 0.5;
+  animation: wave 8s linear infinite;
+}
+
+.wave-glass-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 4s infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(100%) skewX(-15deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes loadingDots {
+  0%, 20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading-dots {
+  display: inline-block;
+  width: 16px;
+  text-align: left;
+  animation: loadingDots 1.5s infinite;
+}
+
+/* Loading animation for the counter */
+@keyframes loadingDots {
+  0%, 20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading-dots {
+  display: inline-block;
+  width: 16px;
+  text-align: left;
+  animation: loadingDots 1.5s infinite;
+}
+
+
+/* Clash of Clans Popup Styles */
+.clash-popup {
+  background: #362c1e;
+  border: 8px solid #7a5c3d;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 480px;
+  position: relative;
+  z-index: 51;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transform: scale(0.9);
+}
+
+/* Header styling */
+.clash-popup-header {
+  background: linear-gradient(to bottom, #8b6b43, #6b5136);
+  color: #fff;
+  padding: 12px 20px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  border-bottom: 4px solid #5a4429;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clash-popup-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Supercell", Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.clash-close-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff5a5a;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Content styling */
+.clash-popup-content {
+  padding: 24px 20px;
+  text-align: center;
+  color: #f8e8c8;
+  font-weight: 500;
+  background: linear-gradient(to bottom, #463728, #3b2e21);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clash-popup-content p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Button container */
+.clash-popup-buttons {
+  display: flex;
+  padding: 12px 20px 16px;
+  background: #2c231a;
+  justify-content: space-around;
+  border-top: 4px solid #231b14;
+}
+
+/* Button styling */
+.clash-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s, filter 0.1s;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.5px;
+}
+
+.clash-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.clash-btn-cancel {
+  background: linear-gradient(to bottom, #d53c3c, #a02c2c);
+}
+
+.clash-btn-cancel:hover {
+  filter: brightness(1.1);
+}
+
+.clash-btn-confirm {
+  background: linear-gradient(to bottom, #65a844, #4a7e32);
+}
+
+.clash-btn-confirm:hover {
+  filter: brightness(1.1);
+}
+
+/* Animation */
+@keyframes popupIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-popup-in {
+  animation: popupIn 0.3s forwards ease-out;
 }

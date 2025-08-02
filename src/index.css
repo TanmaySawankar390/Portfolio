@@ -11,3 +11,238 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.wave-glass-bg {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.wave-glass-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.2) 100%);
+  z-index: 0;
+  opacity: 0.5;
+  animation: wave 8s linear infinite;
+}
+
+.wave-glass-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 4s infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(100%) skewX(-15deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes loadingDots {
+  0%, 20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading-dots {
+  display: inline-block;
+  width: 16px;
+  text-align: left;
+  animation: loadingDots 1.5s infinite;
+}
+
+/* Loading animation for the counter */
+@keyframes loadingDots {
+  0%, 20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading-dots {
+  display: inline-block;
+  width: 16px;
+  text-align: left;
+  animation: loadingDots 1.5s infinite;
+}
+
+/* Clash of Clans Popup Styles */
+.clash-popup {
+  background: #362c1e;
+  border: 8px solid #7a5c3d;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 480px;
+  position: relative;
+  z-index: 51;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transform: scale(0.9);
+}
+
+/* Header styling */
+.clash-popup-header {
+  background: linear-gradient(to bottom, #8b6b43, #6b5136);
+  color: #fff;
+  padding: 12px 20px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  border-bottom: 4px solid #5a4429;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clash-popup-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Supercell", Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.clash-close-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff5a5a;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Content styling */
+.clash-popup-content {
+  padding: 24px 20px;
+  text-align: center;
+  color: #f8e8c8;
+  font-weight: 500;
+  background: linear-gradient(to bottom, #463728, #3b2e21);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clash-popup-content p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Button container */
+.clash-popup-buttons {
+  display: flex;
+  padding: 12px 20px 16px;
+  background: #2c231a;
+  justify-content: space-around;
+  border-top: 4px solid #231b14;
+}
+
+/* Button styling */
+.clash-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s, filter 0.1s;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.5px;
+}
+
+.clash-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.clash-btn-cancel {
+  background: linear-gradient(to bottom, #d53c3c, #a02c2c);
+}
+
+.clash-btn-cancel:hover {
+  filter: brightness(1.1);
+}
+
+.clash-btn-confirm {
+  background: linear-gradient(to bottom, #65a844, #4a7e32);
+}
+
+.clash-btn-confirm:hover {
+  filter: brightness(1.1);
+}
+
+/* Animation */
+@keyframes popupIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-popup-in {
+  animation: popupIn 0.3s forwards ease-out;
+}
+
+/* .button-wood {
+  background: url("../src/img/wood.png");
+  background-size: cover;
+  background-position: center;
+} */
+
+.real-wood-button {
+  background: url("../src/img/wood.png");
+}
