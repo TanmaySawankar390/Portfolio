@@ -5,6 +5,8 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getDatabase, ref, onValue, set, get } from "firebase/database";
 import { BiTrendingUp } from "react-icons/bi";
+import React from "react";
+import { Shield, Gem, Sword, ChevronDown } from "lucide-react";
 
 function Header() {
   const [raidCount, setRaidCount] = useState(0);
@@ -165,69 +167,7 @@ function Header() {
   return (
     <div className="App">
       <header className="relative h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-black/70" />
-        
-        {/* Clash of Clans Popup */}
-        {showPopup && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="absolute inset-0 bg-black/70" onClick={() => setShowPopup(false)}></div>
-            <div className="clash-popup animate-popup-in">
-              {/* Popup Header */}
-              <div className="clash-popup-header">
-                <h3>Village Leave Confirmation</h3>
-                <button 
-                  className="clash-close-btn"
-                  onClick={() => setShowPopup(false)}
-                >
-                  <X size={18} />
-                </button>
-              </div>
-              
-              {/* Popup Content */}
-              <div className="clash-popup-content">
-                <Shield className="w-16 h-16 text-yellow-500 mb-4" />
-                <p>Are you sure you want to leave your village and visit GitHub Base?</p>
-                <p className="text-sm text-yellow-200 mt-2">Your progress will be saved</p>
-              </div>
-              
-              {/* Popup Buttons */}
-              <div className="clash-popup-buttons">
-                <button
-                  className="clash-btn clash-btn-cancel"
-                  onClick={() => setShowPopup(false)}
-                >
-                  Back to Village
-                </button>
-                <button
-                  className="clash-btn clash-btn-confirm"
-                  onClick={navigateToGitHub}
-                >
-                  Continue to GitHub
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-        
-        {/* Visitor Counter */}
-        <div className="absolute top-4 right-4 z-20 flex items-center gap-2 px-4 py-2 rounded-full shadow-lg hover:scale-95 transition-all duration-300 overflow-hidden wave-glass-bg">
-          <div className="flex items-center gap-1 bg-yellow-500 p-1.5 rounded-full z-10">
-            <BiTrendingUp className="w-4 h-4 text-blue-900" />
-          </div>
-          <div className="flex flex-col items-start z-10">
-            <span className="text-lg font-bold flex items-center">
-              {loading ? (
-                <span className="text-yellow-400 flex items-center">
-                  <span className="loading-dots">...</span>
-                </span>
-              ) : (
-                <span className="text-yellow-400">{formatCount(raidCount)}</span>
-              )}
-              <span className="text-white/90 text-xs ml-1 uppercase tracking-wider font-semibold">chiefs</span>
-            </span>
-            <span className="text-white/70 text-xs -mt-1">visited this month</span>
-          </div>
-        </div>
+        <div className="absolute inset-0 bg-black/60" />
         
         {/* Main Content */}
         <div className="relative z-10 flex flex-col items-center">
