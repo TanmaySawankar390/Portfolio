@@ -90,7 +90,7 @@ Frontend Mastery:
 
 ### 🎖️ Recruitment Status
 **Currently seeking opportunities in:**
-- Softwaare Development roles
+- Software Development roles
 - Full-Stack positions with modern tech stacks  
 - Remote-first companies with strong engineering culture
 - Projects involving cutting-edge technologies
