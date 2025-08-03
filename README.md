@@ -8,7 +8,6 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/coc2.jpeg" alt="Clash of Clans Developer Banner" width="50%"  style="border-radius: 10px;">
 </div>
----
 
 ## 🏰 About The Chief Developer
 
