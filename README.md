@@ -69,20 +69,6 @@ Frontend Mastery:
 
 ---
 
-## 📈 Battle Statistics
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=TanmaySawankar390&theme=dark&show_icons=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&text_color=FFFFFF)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=TanmaySawankar390&theme=dark&bg_color=0D1117&title_color=F85D7F&text_color=FFFFFF&layout=compact)
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=TanmaySawankar390&theme=dark&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=FFFFFF)
-
-</div>
-
----
-
 ## 🎯 Current Campaigns
 
 ### 🚀 Active Missions
