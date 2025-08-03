@@ -10,7 +10,7 @@
 
 ## 🏰 About The Chief Developer
 
-Greetings, fellow warriors of code! I'm **[Your Name]**, a passionate developer who approaches programming like building the ultimate Clash of Clans village. Every project is a strategic masterpiece, every line of code is carefully placed like a defensive structure, and every bug fix is a victorious raid against chaos.
+Greetings, fellow warriors of code! I'm **Tanmay Sawankar**, a passionate developer who approaches programming like building the ultimate Clash of Clans village. Every project is a strategic masterpiece, every line of code is carefully placed like a defensive structure, and every bug fix is a victorious raid against chaos.
 
 Just as a skilled Chief builds impenetrable defenses and launches devastating attacks, I craft robust applications and elegant solutions that stand the test of time and scale.
 
@@ -30,13 +30,9 @@ Frontend Mastery:
 ├── JavaScript/TypeScript 🗡️ [■■■■■■■■■□] 90%
 ├── React/Next.js 🏹 [■■■■■■■■□□] 85%
 ├── HTML5/CSS3 🛡️ [■■■■■■■■■□] 95%
-└── UI/UX Design 🎨 [■■■■■■■□□□] 80%
+├── UI/UX Design 🎨 [■■■■■■■□□□] 80%
+└── Firebase Analytics 🎨 [■■■■■■■□□□] 80%
 
-Backend Fortifications:
-├── Node.js/Express 🏰 [■■■■■■■■□□] 85%
-├── Python/Django 🐉 [■■■■■■■□□□] 75%
-├── Database Magic 💎 [■■■■■■■■□□] 80%
-└── API Development ⚔️ [■■■■■■■■■□] 90%
 ```
 
 ### 🔮 Special Abilities (Tools & Frameworks)
@@ -47,7 +43,7 @@ Backend Fortifications:
 | **💎 Database Treasures** | MongoDB, PostgreSQL, MySQL, Redis |
 | **☁️ Cloud Kingdoms** | AWS, Google Cloud, Vercel, Netlify |
 | **🛠️ DevOps Arsenal** | Docker, Git, CI/CD, Linux |
-| **🎨 Design Spells** | Figma, Adobe XD, Tailwind CSS |
+| **🎨 Design Spells** | Figma, Tailwind CSS |
 
 ---
 
@@ -55,8 +51,8 @@ Backend Fortifications:
 
 ### 📊 GitHub Conquest Summary
 ```
-🔥 Total Repositories: 50+ strategic bases built
-⭐ Stars Earned: 200+ community appreciation points  
+🔥 Total Repositories: 40+ strategic bases built
+⭐ Stars Earned: 10+ community appreciation points  
 🤝 Collaborations: 25+ successful clan wars
 🐛 Bugs Defeated: 1000+ enemies vanquished
 📈 Contribution Streak: 365+ days of consistent raids
@@ -70,49 +66,15 @@ Backend Fortifications:
 
 ---
 
-## 🏛️ Featured Projects (My Greatest Conquests)
-
-### 🏰 [Project Name 1] - The Ultimate Fortress
-**Tech Stack**: React | Node.js | MongoDB | AWS
-```
-A full-stack web application that dominates the battlefield of [domain].
-🎯 Impact: Increased user engagement by 150%
-⚡ Performance: 95+ Lighthouse score
-🛡️ Security: Enterprise-grade authentication
-```
-[🔗 Live Demo](https://your-project-link.com) | [📖 Documentation](https://github.com/yourusername/project)
-
-### ⚔️ [Project Name 2] - The Swift Striker
-**Tech Stack**: Next.js | TypeScript | PostgreSQL | Vercel
-```
-Lightning-fast e-commerce platform built for victory.
-🚀 Speed: 2.3s average load time
-💰 Revenue: Generated $50K+ in first quarter
-🔄 Scalability: Handles 10K+ concurrent users
-```
-[🔗 Live Demo](https://your-project-link.com) | [📖 Documentation](https://github.com/yourusername/project)
-
-### 🐉 [Project Name 3] - The Dragon's Lair
-**Tech Stack**: Python | Django | Redis | Docker
-```
-AI-powered solution that breathes fire into data analysis.
-🧠 Intelligence: 92% accuracy in predictions
-📈 Growth: Reduced processing time by 80%
-🔮 Innovation: Pioneered new approach to [specific problem]
-```
-[🔗 Live Demo](https://your-project-link.com) | [📖 Documentation](https://github.com/yourusername/project)
-
----
-
 ## 📈 Battle Statistics
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yourusername&theme=dark&show_icons=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&text_color=FFFFFF)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=TanmaySawanka390&theme=dark&show_icons=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&text_color=FFFFFF)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=yourusername&theme=dark&bg_color=0D1117&title_color=F85D7F&text_color=FFFFFF&layout=compact)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=TanmaySawankar390&theme=dark&bg_color=0D1117&title_color=F85D7F&text_color=FFFFFF&layout=compact)
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=yourusername&theme=dark&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=FFFFFF)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=TanmaySawankar390&theme=dark&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=FFFFFF)
 
 </div>
 
@@ -121,14 +83,14 @@ AI-powered solution that breathes fire into data analysis.
 ## 🎯 Current Campaigns
 
 ### 🚀 Active Missions
-- 🔥 **Project Alpha**: Building the next-generation [describe project]
+- 🔥 **Project Alpha**: Building the next-generation projects.
 - 📚 **Skill Upgrade**: Mastering advanced React patterns and micro-frontends
 - 🌟 **Open Source**: Contributing to popular libraries in the JavaScript ecosystem
 - 🎮 **Side Quest**: Developing a mobile app using React Native
 
 ### 🎖️ Recruitment Status
 **Currently seeking opportunities in:**
-- Senior Frontend Developer roles
+- Softwaare Development roles
 - Full-Stack positions with modern tech stacks  
 - Remote-first companies with strong engineering culture
 - Projects involving cutting-edge technologies
@@ -140,11 +102,10 @@ AI-powered solution that breathes fire into data analysis.
 Ready to embark on epic coding adventures together? Let's connect and build something legendary!
 
 ### 📫 Battle Communications
-- 📧 **Email**: [your.email@domain.com](mailto:your.email@domain.com)
-- 💼 **LinkedIn**: [Your Professional Profile](https://linkedin.com/in/yourprofile)
-- 🐦 **Twitter**: [@YourHandle](https://twitter.com/yourhandle)
-- 🌐 **Portfolio**: [www.yourportfolio.com](https://yourportfolio.com)
-- 💬 **Discord**: YourUsername#1234
+- 📧 **Email**: [tanmaysawankar4441@gmail.com](mailto:tanmaysawankar4441@gmail.com)
+- 💼 **LinkedIn**: [Your Professional Profile](https://www.linkedin.com/in/tanmay-sawankar-57a945223/)
+- 🌐 **Portfolio**: [www.yourportfolio.com](https://tanxportfolio.netlify.app)
+- 💬 **Discord**: tanmy#4441
 
 ### 🌟 Ways to Collaborate
 - 🤝 **Open Source**: Contributing to meaningful projects
@@ -152,17 +113,6 @@ Ready to embark on epic coding adventures together? Let's connect and build some
 - 🚀 **Startup Ventures**: Building the next big thing
 - 🎯 **Freelance Projects**: Solving complex technical challenges
 
----
-
-## 🏅 Testimonials from Fellow Warriors
-
-> *"Working with [Your Name] was like having the ultimate Clash of Clans strategist on our development team. Their code is as solid as a maxed-out Town Hall!"*  
-> **— Client Name, Company Title**
-
-> *"They don't just write code; they architect digital empires. Every project is a masterpiece of planning and execution."*  
-> **— Colleague Name, Senior Developer**
-
----
 
 ## 🎮 Fun Facts
 
@@ -180,14 +130,14 @@ Ready to embark on epic coding adventures together? Let's connect and build some
 
 **Let's build something legendary together!**
 
-[![Email](https://img.shields.io/badge/Email-Contact%20Me-red?style=for-the-badge&logo=gmail)](mailto:your.email@domain.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit%20Now-blue?style=for-the-badge&logo=web)](https://yourportfolio.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourprofile)
+[![Email](https://img.shields.io/badge/Email-Contact%20Me-red?style=for-the-badge&logo=gmail)](mailto:tanmaysawankar4441@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit%20Now-blue?style=for-the-badge&logo=web)](https://tanxportfolio.netlify.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/tanmay-sawankar-57a945223/)
 
 ---
 
 *"In the realm of code, as in Clash of Clans, victory belongs to those who plan strategically, execute flawlessly, and never stop upgrading their skills."*
 
-**— [Your Name], Chief Developer & Digital Strategist**
+**— Tanmay Sawankar, Chief Developer & Digital Strategist**
 
 </div>
