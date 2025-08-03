@@ -1,16 +1,16 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { Shield, Gem, Sword, ChevronDown, X } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getDatabase, ref, onValue, set, get } from "firebase/database";
 import { BiTrendingUp } from "react-icons/bi";
-import goblin from "./img/goblin.png"
+import goblin from "./img/goblin.png";
 
 function Header() {
   const [raidCount, setRaidCount] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [showPopup, setShowPopup] = useState(false); // State for the popup
+  const [showPopup, setShowPopup] = useState(false);
 
   // Format count function to handle scaling
   const formatCount = (count) => {
@@ -197,7 +197,7 @@ function Header() {
               {/* Popup Content */}
               <div className="clash-popup-content">
                 <img
-                  src = {goblin}
+                  src={goblin}
                   alt="Goblin Icon"
                   className="w-40 h-20 mb-4"
                 />
@@ -267,39 +267,43 @@ function Header() {
             </p>
           </div>
 
-          {/* Resource Bar */}
-          <div className="flex gap-6 items-center">
-            {/* GitHub (Gold) */}
+          {/* Resource Bar - Clash of Clans Style Resource Icons */}
+          <div className="flex gap-12 items-center">
+            {/* GitHub Base (Gold Coin) */}
             <div
               onClick={() => handleResourceClick("github")}
-              className="group flex flex-col items-center cursor-pointer transform hover:scale-110 transition-all"
+              className="resource-button-container"
             >
-              <div className="bg-gradient-to-b from-yellow-500 to-yellow-700 w-16 h-16 rounded-xl flex items-center justify-center border-2 border-yellow-300 shadow-lg mb-2 group-hover:shadow-yellow-500/50">
-                <Shield className="w-8 h-8 text-white" />
+              <div className="coc-resource-icon gold-coin-button" aria-label="Gold Coin">
               </div>
-              <span className="text-yellow-400 font-bold">Github Base</span>
+              <div className="resource-button-content">
+                  <span className="resource-button-text">GitHub Base</span>
+                </div>
             </div>
 
-            {/* Projects (Elixir) */}
+            {/* Battle Projects (Elixir Drop) */}
             <div
               onClick={() => handleResourceClick("projects")}
-              className="group flex flex-col items-center cursor-pointer transform hover:scale-110 transition-all"
+              className="resource-button-container"
             >
-              <div className="bg-gradient-to-b from-purple-500 to-purple-800 w-16 h-16 rounded-xl flex items-center justify-center border-2 border-purple-300 shadow-lg mb-2 group-hover:shadow-purple-500/50">
-                <Sword className="w-8 h-8 text-white" />
+              <div className="coc-resource-icon elixir-drop-button" aria-label="Elixir Drop">
+                
               </div>
-              <span className="text-purple-400 font-bold">Battle Projects</span>
+              <div className="resource-button-content">
+                  <span className="resource-button-text">Battle Projects</span>
+                </div>
             </div>
 
-            {/* Contact (Gems) */}
+            {/* Clan Contact (Dark Elixir Drop) */}
             <div
               onClick={() => handleResourceClick("contact")}
-              className="group flex flex-col items-center cursor-pointer transform hover:scale-110 transition-all"
+              className="resource-button-container"
             >
-              <div className="bg-gradient-to-b from-cyan-400 to-cyan-700 w-16 h-16 rounded-xl flex items-center justify-center border-2 border-cyan-300 shadow-lg mb-2 group-hover:shadow-cyan-500/50">
-                <Gem className="w-8 h-8 text-white" />
+              <div className="coc-resource-icon dark-elixir-drop-button" aria-label="Dark Elixir Drop">
               </div>
-              <span className="text-cyan-400 font-bold">Clan Contact</span>
+              <div className="resource-button-content">
+                  <span className="resource-button-text">Clan Contact</span>
+                </div>
             </div>
           </div>
 

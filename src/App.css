@@ -1327,3 +1327,313 @@ textarea:focus {
   animation: fade-in 0.5s ease-out;
 }
 
+/* Clash of Clans Resource Icons - Professional Button Design */
+
+/* Resource Button Container */
+.resource-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  padding: 2px;
+  gap: 2px;
+}
+
+.resource-button-container:hover {
+  transform: scale(1.05);
+}
+
+.coc-resource-icon {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resource-button-content {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.resource-button-text {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease;
+  display: block;
+  padding: 0px 0px;
+  border-radius: 15px;
+  white-space: nowrap;
+}
+
+/* Gold Coin Icon - Enhanced */
+.gold-coin-button {
+  background: radial-gradient(circle at 30% 30%, #fff2a6 0%, #ffd700 25%, #e6c000 60%, #b08b00 85%, #8a6c00 100%);
+  border: 3px solid #6b5400;
+  overflow: hidden;
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.4),
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.gold-coin-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 30%, transparent 50%),
+    linear-gradient(45deg, transparent 40%, rgba(255, 235, 125, 0.3) 50%, transparent 60%),
+    linear-gradient(135deg, transparent 40%, rgba(255, 235, 125, 0.3) 50%, transparent 60%);
+  z-index: 1;
+}
+
+.gold-coin-button:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  background: radial-gradient(circle at center, #ffd700 0%, #e6c000 40%, #b08b00 80%, #9a7800 100%);
+  border-radius: 50%;
+  border: 1px solid rgba(138, 108, 0, 0.5);
+  z-index: 2;
+}
+
+.gold-coin-button .resource-button-text {
+  color: #ffd700;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 193, 7, 0.25));
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+/* Elixir Fire Flame Icon */
+.elixir-drop-button {
+  background: linear-gradient(to bottom, #ff6b9d 0%, #c668e8 30%, #9a3bc1 70%, #6c1f8e 100%);
+  border: none;
+  overflow: visible;
+  border-radius: 0;
+  width: 80px;
+  height: 80px;
+  clip-path: polygon(
+    50% 0%, 
+    65% 5%, 80% 12%, 88% 25%, 92% 40%, 88% 50%, 
+    95% 60%, 90% 75%, 85% 85%, 70% 92%, 55% 98%, 
+    50% 100%, 
+    45% 98%, 30% 92%, 15% 85%, 10% 75%, 5% 60%, 
+    12% 50%, 8% 40%, 12% 25%, 20% 12%, 35% 5%
+  );
+  box-shadow: 
+    0 0 25px rgba(255, 107, 157, 0.7),
+    0 0 40px rgba(198, 104, 232, 0.5),
+    0 8px 20px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 2px rgba(108, 31, 142, 0.8);
+}
+
+.elixir-drop-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 35% 20%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 192, 255, 0.4) 25%, transparent 50%),
+    radial-gradient(ellipse at 65% 35%, rgba(255, 107, 157, 0.5) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(255, 192, 255, 0.3) 0%, transparent 60%);
+  z-index: 1;
+  clip-path: inherit;
+}
+
+.elixir-drop-button:after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  background: 
+    radial-gradient(circle at 40% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 60%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  clip-path: polygon(
+    50% 5%, 
+    58% 12%, 70% 10%, 78% 18%, 82% 28%, 78% 35%, 
+    85% 42%, 82% 52%, 78% 60%, 70% 68%, 58% 75%, 
+    50% 80%, 
+    42% 75%, 30% 68%, 22% 60%, 18% 52%, 15% 42%, 
+    22% 35%, 18% 28%, 22% 18%, 30% 10%, 42% 12%
+  );
+  z-index: 2;
+}
+
+.elixir-drop-button .resource-button-text {
+  color: #ff6b9d;
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.15), rgba(198, 104, 232, 0.25));
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+}
+
+/* Dark Elixir Fire Flame Icon - #100b1d Color Palette */
+.dark-elixir-drop-button {
+  background: linear-gradient(to bottom, #2d1b3d 0%, #201529 30%, #100b1d 70%, #0a0814 100%);
+  border: none;
+  overflow: visible;
+  border-radius: 0;
+  width: 80px;
+  height: 80px;
+  clip-path: polygon(
+    50% 0%, 
+    65% 5%, 80% 12%, 88% 25%, 92% 40%, 88% 50%, 
+    95% 60%, 90% 75%, 85% 85%, 70% 92%, 55% 98%, 
+    50% 100%, 
+    45% 98%, 30% 92%, 15% 85%, 10% 75%, 5% 60%, 
+    12% 50%, 8% 40%, 12% 25%, 20% 12%, 35% 5%
+  );
+  box-shadow: 
+    0 0 30px rgba(45, 27, 61, 1),
+    0 0 50px rgba(16, 11, 29, 0.8),
+    0 0 70px rgba(16, 11, 29, 0.4),
+    0 8px 20px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 2px rgba(10, 8, 20, 0.9);
+}
+
+.dark-elixir-drop-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 35% 20%, rgba(138, 107, 170, 0.6) 0%, rgba(74, 53, 88, 0.3) 25%, transparent 50%),
+    radial-gradient(ellipse at 65% 35%, rgba(45, 27, 61, 0.7) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(74, 53, 88, 0.4) 0%, transparent 60%);
+  z-index: 1;
+  clip-path: inherit;
+}
+
+.dark-elixir-drop-button:after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  background: 
+    radial-gradient(circle at 40% 30%, rgba(156, 77, 255, 0.3) 0%, rgba(156, 77, 255, 0.1) 40%, transparent 60%),
+    linear-gradient(135deg, rgba(150, 87, 202, 0.2) 0%, transparent 100%);
+  clip-path: polygon(
+    50% 5%, 
+    58% 12%, 70% 10%, 78% 18%, 82% 28%, 78% 35%, 
+    85% 42%, 82% 52%, 78% 60%, 70% 68%, 58% 75%, 
+    50% 80%, 
+    42% 75%, 30% 68%, 22% 60%, 18% 52%, 15% 42%, 
+    22% 35%, 18% 28%, 22% 18%, 30% 10%, 42% 12%
+  );
+  z-index: 2;
+}
+
+.dark-elixir-drop-button .resource-button-text {
+  color: #8a6baa;
+  background: linear-gradient(135deg, rgba(45, 27, 61, 0.25), rgba(77, 47, 99, 0.35));
+  box-shadow: 0 4px 12px rgba(45, 27, 61, 0.4);
+}
+
+/* Enhanced Flame Animations */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes elixirFlame {
+  0%, 100% { 
+    box-shadow: 
+      0 0 30px rgba(255, 107, 157, 0.8),
+      0 0 50px rgba(198, 104, 232, 0.6),
+      0 0 70px rgba(154, 59, 193, 0.4),
+      0 10px 25px rgba(0, 0, 0, 0.6);
+  }
+  33% { 
+    box-shadow: 
+      0 0 40px rgba(255, 107, 157, 1),
+      0 0 60px rgba(198, 104, 232, 0.8),
+      0 0 80px rgba(154, 59, 193, 0.6),
+      0 10px 25px rgba(0, 0, 0, 0.6);
+  }
+  66% { 
+    box-shadow: 
+      0 0 25px rgba(255, 107, 157, 0.6),
+      0 0 45px rgba(198, 104, 232, 0.5),
+      0 0 65px rgba(154, 59, 193, 0.3),
+      0 10px 25px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes darkElixirFlame {
+  0%, 100% { 
+    box-shadow: 
+      0 0 35px rgba(74, 53, 88, 1),
+      0 0 55px rgba(45, 27, 61, 0.9),
+      0 0 75px rgba(16, 11, 29, 0.6),
+      0 10px 25px rgba(0, 0, 0, 0.8);
+  }
+  33% { 
+    box-shadow: 
+      0 0 45px rgba(74, 53, 88, 1.2),
+      0 0 65px rgba(45, 27, 61, 1.1),
+      0 0 85px rgba(16, 11, 29, 0.8),
+      0 10px 25px rgba(0, 0, 0, 0.8);
+  }
+  66% { 
+    box-shadow: 
+      0 0 30px rgba(74, 53, 88, 0.8),
+      0 0 50px rgba(45, 27, 61, 0.7),
+      0 0 70px rgba(16, 11, 29, 0.5),
+      0 10px 25px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes goldGlow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.4),
+      0 8px 25px rgba(0, 0, 0, 0.4),
+      inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 
+      0 0 30px rgba(255, 215, 0, 0.6),
+      0 8px 25px rgba(0, 0, 0, 0.4),
+      inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  }
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.01) rotate(-0.3deg); }
+  50% { transform: scale(0.99) rotate(0.3deg); }
+  75% { transform: scale(1.01) rotate(-0.2deg); }
+}
+
+.gold-coin-button {
+  animation: pulse 3s ease-in-out infinite, goldGlow 2s ease-in-out infinite;
+}
+
+.elixir-drop-button {
+  animation: pulse 3s ease-in-out infinite, elixirFlame 1.8s ease-in-out infinite, flameFlicker 2.5s ease-in-out infinite;
+}
+
+.dark-elixir-drop-button {
+  animation: pulse 3s ease-in-out infinite, darkElixirFlame 2.2s ease-in-out infinite, flameFlicker 2.8s ease-in-out infinite;
+}
