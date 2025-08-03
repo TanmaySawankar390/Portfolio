@@ -103,8 +103,8 @@ Ready to embark on epic coding adventures together? Let's connect and build some
 
 ### 📫 Battle Communications
 - 📧 **Email**: [tanmaysawankar4441@gmail.com](mailto:tanmaysawankar4441@gmail.com)
-- 💼 **LinkedIn**: [Your Professional Profile](https://www.linkedin.com/in/tanmay-sawankar-57a945223/)
-- 🌐 **Portfolio**: [www.yourportfolio.com](https://tanxportfolio.netlify.app)
+- 💼 **LinkedIn**: [Connect Here](https://www.linkedin.com/in/tanmay-sawankar-57a945223/)
+- 🌐 **Portfolio**: [Tanmay Sawankar](https://tanxportfolio.netlify.app)
 - 💬 **Discord**: tanmy#4441
 
 ### 🌟 Ways to Collaborate
