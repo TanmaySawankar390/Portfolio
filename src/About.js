@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Shield, Trophy, Target, Zap, Code, Users, Calendar, Award, TrendingUp, Star } from "lucide-react";
 import electro_dragon from "./img/electro-dragon.gif";
 import th12 from "./img/th12.png";
+import "./App.css";
 
 function About() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -238,28 +239,6 @@ function About() {
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .transform-style-preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        @keyframes fade-in {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.5s ease-out;
-        }
-      `}</style>
     </div>
   );
 }
