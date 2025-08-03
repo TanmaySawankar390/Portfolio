@@ -6,8 +6,8 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/tanmay-sawankar-57a945223)
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/Balloon.png" alt="Clash of Clans Balloon" width="30%" height="200" style="border-radius: 10px; margin: 0 1.5%; object-fit: cover;">
-  <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/coc2.jpeg" alt="Clash of Clans Village" width="30%" height="200" style="border-radius: 10px; margin: 0 1.5%; object-fit: cover;">
+  <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/Balloon.png" alt="Clash of Clans Balloon" width="10%" height="200" style="border-radius: 10px; margin: 0 1.5%; object-fit: cover;">
+  <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/coc2.jpeg" alt="Clash of Clans Village" width="50%" height="200" style="border-radius: 10px; margin: 0 1.5%; object-fit: cover;">
   <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/wizard.gif" alt="Clash of Clans Wizard" width="30%" height="200" style="border-radius: 10px; margin: 0 1.5%; object-fit: cover;">
 </div>
 
