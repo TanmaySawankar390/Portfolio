@@ -2,9 +2,9 @@
 
 > *"Victory belongs to the persistent!"* - Building legendary code, one commit at a time
 
-[![Profile Views](https://komarev.com/ghpvc/?username=yourusername&color=orange&style=for-the-badge)]([https://github.com/yourusername](https://github.com/TanmaySawankar390))
-[![GitHub followers](https://img.shields.io/github/followers/yourusername?style=for-the-badge&color=blue)]([https://github.com/yourusername](https://github.com/TanmaySawankar390))
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)]([https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/tanmay-sawankar-57a945223/))
+[![Profile Views](https://komarev.com/ghpvc/?username=yourusername&color=orange&style=for-the-badge)](https://github.com/TanmaySawankar390)
+[![GitHub followers](https://img.shields.io/github/followers/yourusername?style=for-the-badge&color=blue)](https://github.com/TanmaySawankar390)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/tanmay-sawankar-57a945223)
 
 ---
 
