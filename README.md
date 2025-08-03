@@ -6,7 +6,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/tanmay-sawankar-57a945223)
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/coc2.jpeg" alt="Clash of Clans Developer Banner" width="100%" style="border-radius: 10px;">
+  <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/coc2.jpeg" alt="Clash of Clans Developer Banner" width="100%" height="50%" style="border-radius: 10px;">
 </div>
 ---
 
