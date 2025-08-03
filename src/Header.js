@@ -5,12 +5,13 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getDatabase, ref, onValue, set, get } from "firebase/database";
 import { BiTrendingUp } from "react-icons/bi";
+import goblin from "./img/goblin.png"
 
 function Header() {
   const [raidCount, setRaidCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showPopup, setShowPopup] = useState(false); // State for the popup
-  
+
   // Format count function to handle scaling
   const formatCount = (count) => {
     if (count >= 1000000) {
@@ -22,25 +23,25 @@ function Header() {
     }
     return count;
   };
-  
+
   // Firebase code remains the same
   useEffect(() => {
     // Ensure we have a Firebase config regardless of environment variables
     const firebaseConfig = {
-        apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-        authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-        databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-        projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID ,
-        storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET ,
-        messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-        appId: process.env.REACT_APP_FIREBASE_APP_ID ,
-        measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+      apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+      authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+      databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+      projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+      storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+      appId: process.env.REACT_APP_FIREBASE_APP_ID,
+      measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
     };
-    
+
     try {
       // Initialize Firebase code remains the same...
       let app, db, analytics;
-      
+
       try {
         app = initializeApp(firebaseConfig);
         db = getDatabase(app);
@@ -50,79 +51,86 @@ function Header() {
         setLoading(false);
         return;
       }
-      
+
       // Rest of your Firebase code...
-      const countRef = ref(db, 'villageRaids/count');
-      
+      const countRef = ref(db, "villageRaids/count");
+
       const fetchCount = () => {
-        return get(countRef).then((snapshot) => {
-          const currentCount = snapshot.exists() ? snapshot.val() : 0;
-          setRaidCount(currentCount);
-          setLoading(false);
-          return currentCount;
-        }).catch(err => {
-          console.error("Error fetching count:", err);
-          setLoading(false);
-          return 0;
-        });
+        return get(countRef)
+          .then((snapshot) => {
+            const currentCount = snapshot.exists() ? snapshot.val() : 0;
+            setRaidCount(currentCount);
+            setLoading(false);
+            return currentCount;
+          })
+          .catch((err) => {
+            console.error("Error fetching count:", err);
+            setLoading(false);
+            return 0;
+          });
       };
-      
-      fetchCount().then(currentCount => {
-        const deviceId = localStorage.getItem('raider_id');
-        
+
+      fetchCount().then((currentCount) => {
+        const deviceId = localStorage.getItem("raider_id");
+
         if (!deviceId) {
           const newCount = currentCount + 1;
-          
+
           set(countRef, newCount)
             .then(() => {
-              const newRaiderId = Date.now().toString() + Math.random().toString(36).substring(2, 9);
-              localStorage.setItem('raider_id', newRaiderId);
-              
+              const newRaiderId =
+                Date.now().toString() +
+                Math.random().toString(36).substring(2, 9);
+              localStorage.setItem("raider_id", newRaiderId);
+
               try {
-                logEvent(analytics, 'new_raid', {
+                logEvent(analytics, "new_raid", {
                   raid_id: newRaiderId,
                   raid_time: new Date().toISOString(),
-                  new_count: newCount
+                  new_count: newCount,
                 });
               } catch (analyticsError) {
                 console.error("Analytics error:", analyticsError);
               }
             })
-            .catch(updateError => {
+            .catch((updateError) => {
               console.error("Error updating count:", updateError);
             });
         } else {
           try {
-            logEvent(analytics, 'return_visit');
+            logEvent(analytics, "return_visit");
           } catch (analyticsError) {
             console.error("Analytics error:", analyticsError);
           }
         }
       });
-      
+
       let unsubscribe;
       try {
-        unsubscribe = onValue(countRef, (snapshot) => {
-          if (snapshot.exists()) {
-            const value = snapshot.val();
-            setRaidCount(value);
-            setLoading(false);
-          } else {
+        unsubscribe = onValue(
+          countRef,
+          (snapshot) => {
+            if (snapshot.exists()) {
+              const value = snapshot.val();
+              setRaidCount(value);
+              setLoading(false);
+            } else {
+              setLoading(false);
+            }
+          },
+          (error) => {
+            console.error("Database listener error:", error);
             setLoading(false);
           }
-        }, (error) => {
-          console.error("Database listener error:", error);
-          setLoading(false);
-        });
+        );
       } catch (listenerError) {
         console.error("Error setting up listener:", listenerError);
         setLoading(false);
       }
-      
+
       return () => {
         if (unsubscribe) unsubscribe();
       };
-      
     } catch (err) {
       console.error("Global error:", err);
       setLoading(false);
@@ -131,16 +139,18 @@ function Header() {
 
   // Modified resource click handler
   const handleResourceClick = (type) => {
-    switch(type) {
-      case 'github':
+    switch (type) {
+      case "github":
         // Show popup instead of directly opening GitHub
         setShowPopup(true);
         break;
-      case 'projects':
-        document.getElementById('defenses').scrollIntoView({ behavior: 'smooth' });
+      case "projects":
+        document
+          .getElementById("defenses")
+          .scrollIntoView({ behavior: "smooth" });
         break;
-      case 'contact':
-        document.getElementById('clan').scrollIntoView({ behavior: 'smooth' });
+      case "contact":
+        document.getElementById("clan").scrollIntoView({ behavior: "smooth" });
         break;
       default:
         break;
@@ -149,14 +159,14 @@ function Header() {
 
   // Function to handle GitHub navigation
   const navigateToGitHub = () => {
-    window.open('https://github.com/TanmaySawankar390', '_blank');
+    window.open("https://github.com/TanmaySawankar390", "_blank");
     setShowPopup(false);
   };
 
   const handleScrollDown = () => {
     window.scrollTo({
       top: window.innerHeight,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -164,30 +174,42 @@ function Header() {
     <div className="App">
       <header className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-black/60" />
-        
+
         {/* Clash of Clans Popup */}
         {showPopup && (
           <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="absolute inset-0 bg-black/70" onClick={() => setShowPopup(false)}></div>
+            <div
+              className="absolute inset-0 bg-black/70"
+              onClick={() => setShowPopup(false)}
+            ></div>
             <div className="clash-popup animate-popup-in">
               {/* Popup Header */}
               <div className="clash-popup-header">
                 <h3>Village Leave Confirmation</h3>
-                <button 
+                <button
                   className="clash-close-btn"
                   onClick={() => setShowPopup(false)}
                 >
                   <X size={18} />
                 </button>
               </div>
-              
+
               {/* Popup Content */}
               <div className="clash-popup-content">
-                <Shield className="w-16 h-16 text-yellow-500 mb-4" />
-                <p>Are you sure you want to leave your village and visit GitHub Base?</p>
-                <p className="text-sm text-yellow-200 mt-2">Your progress will be saved</p>
+                <img
+                  src = {goblin}
+                  alt="Goblin Icon"
+                  className="w-40 h-20 mb-4"
+                />
+                <p>
+                  Are you sure you want to leave your village and visit GitHub
+                  Base?
+                </p>
+                <p className="text-sm text-yellow-200 mt-2">
+                  Your progress will be saved
+                </p>
               </div>
-              
+
               {/* Popup Buttons */}
               <div className="clash-popup-buttons">
                 <button
@@ -206,7 +228,7 @@ function Header() {
             </div>
           </div>
         )}
-        
+
         {/* Visitor Counter */}
         <div className="absolute top-4 right-4 z-20 flex items-center gap-2 px-4 py-2 rounded-full shadow-lg hover:scale-95 transition-all duration-300 overflow-hidden wave-glass-bg">
           <div className="flex items-center gap-1 bg-yellow-500 p-1.5 rounded-full z-10">
@@ -219,14 +241,20 @@ function Header() {
                   <span className="loading-dots">...</span>
                 </span>
               ) : (
-                <span className="text-yellow-400">{formatCount(raidCount)}</span>
+                <span className="text-yellow-400">
+                  {formatCount(raidCount)}
+                </span>
               )}
-              <span className="text-white/90 text-xs ml-1 uppercase tracking-wider font-semibold">chiefs</span>
+              <span className="text-white/90 text-xs ml-1 uppercase tracking-wider font-semibold">
+                chiefs
+              </span>
             </span>
-            <span className="text-white/70 text-xs -mt-1">visited your village</span>
+            <span className="text-white/70 text-xs -mt-1">
+              visited your village
+            </span>
           </div>
         </div>
-        
+
         {/* Main Content */}
         <div className="relative z-10 flex flex-col items-center">
           {/* Central Content */}
@@ -242,8 +270,8 @@ function Header() {
           {/* Resource Bar */}
           <div className="flex gap-6 items-center">
             {/* GitHub (Gold) */}
-            <div 
-              onClick={() => handleResourceClick('github')}
+            <div
+              onClick={() => handleResourceClick("github")}
               className="group flex flex-col items-center cursor-pointer transform hover:scale-110 transition-all"
             >
               <div className="bg-gradient-to-b from-yellow-500 to-yellow-700 w-16 h-16 rounded-xl flex items-center justify-center border-2 border-yellow-300 shadow-lg mb-2 group-hover:shadow-yellow-500/50">
@@ -253,8 +281,8 @@ function Header() {
             </div>
 
             {/* Projects (Elixir) */}
-            <div 
-              onClick={() => handleResourceClick('projects')}
+            <div
+              onClick={() => handleResourceClick("projects")}
               className="group flex flex-col items-center cursor-pointer transform hover:scale-110 transition-all"
             >
               <div className="bg-gradient-to-b from-purple-500 to-purple-800 w-16 h-16 rounded-xl flex items-center justify-center border-2 border-purple-300 shadow-lg mb-2 group-hover:shadow-purple-500/50">
@@ -264,8 +292,8 @@ function Header() {
             </div>
 
             {/* Contact (Gems) */}
-            <div 
-              onClick={() => handleResourceClick('contact')}
+            <div
+              onClick={() => handleResourceClick("contact")}
               className="group flex flex-col items-center cursor-pointer transform hover:scale-110 transition-all"
             >
               <div className="bg-gradient-to-b from-cyan-400 to-cyan-700 w-16 h-16 rounded-xl flex items-center justify-center border-2 border-cyan-300 shadow-lg mb-2 group-hover:shadow-cyan-500/50">
@@ -287,7 +315,7 @@ function Header() {
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent" />
 
         {/* Animated Down Arrow */}
-        <div 
+        <div
           onClick={handleScrollDown}
           className="absolute bottom-8 left-1/1.8 transform -translate-x-1/2 cursor-pointer animate-bounce"
         >

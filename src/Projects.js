@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Github, X, Shield, ChevronDown } from "lucide-react";
 import ballon from "./img/Balloon.png";
 import "./App.css";
-
+import goblin from "./img/goblin.png";
 const FloatingBalloon = () => (
   <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
     <div className="absolute w-40 h-40">
@@ -151,9 +151,18 @@ function Projects() {
               
               {/* Popup Content */}
               <div className="clash-popup-content">
-                <Shield className="w-16 h-16 text-yellow-500 mb-4" />
-                <p>Are you sure you want to leave your village and visit Battle Project?</p>
-                <p className="text-sm text-yellow-200 mt-2">Your progress will be saved</p>
+                <img
+                  src = {goblin}
+                  alt="Goblin Icon"
+                  className="w-40 h-20 mb-4"
+                />
+                <p>
+                  Are you sure you want to leave your village and visit GitHub
+                  Base?
+                </p>
+                <p className="text-sm text-yellow-200 mt-2">
+                  Your progress will be saved
+                </p>
               </div>
               
               {/* Popup Buttons */}
