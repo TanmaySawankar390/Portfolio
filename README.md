@@ -38,10 +38,10 @@ Frontend Mastery:
 ### 🔮 Special Abilities (Tools & Frameworks)
 | Category | Technologies |
 |----------|-------------|
-| **⚔️ Frontend Siege** | React, Vue.js, Angular, Svelte |
-| **🏰 Backend Defense** | Node.js, Express, FastAPI, Django |
-| **💎 Database Treasures** | MongoDB, PostgreSQL, MySQL, Redis |
-| **☁️ Cloud Kingdoms** | AWS, Google Cloud, Vercel, Netlify |
+| **⚔️ Frontend Siege** | React |
+| **🏰 Backend Defense** | Node.js, Express, FastAPI |
+| **💎 Database Treasures** | MongoDB, PostgreSQL, MySQL |
+| **☁️ Cloud Kingdoms** | AWS, Vercel, Netlify |
 | **🛠️ DevOps Arsenal** | Docker, Git, CI/CD, Linux |
 | **🎨 Design Spells** | Figma, Tailwind CSS |
 
@@ -70,7 +70,7 @@ Frontend Mastery:
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=TanmaySawanka390&theme=dark&show_icons=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&text_color=FFFFFF)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=TanmaySawankar390&theme=dark&show_icons=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&text_color=FFFFFF)
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=TanmaySawankar390&theme=dark&bg_color=0D1117&title_color=F85D7F&text_color=FFFFFF&layout=compact)
 
