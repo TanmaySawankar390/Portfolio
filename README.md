@@ -1,13 +1,13 @@
 # ⚔️ Welcome to My Digital Village ⚔️
-<div align="center">
-  <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/coc2.jpeg" alt="Clash of Clans Developer Banner" width="100%" style="border-radius: 10px;">
-</div>
 > *"Victory belongs to the persistent!"* - Building legendary code, one commit at a time
 
 [![Profile Views](https://komarev.com/ghpvc/?username=TanmaySawankar390&color=orange&style=for-the-badge)](https://github.com/TanmaySawankar390)
 [![GitHub followers](https://img.shields.io/github/followers/TanmaySawankar390?style=for-the-badge&color=blue)](https://github.com/TanmaySawankar390)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/tanmay-sawankar-57a945223)
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/TanmaySawankar390/Portfolio/main/src/img/coc2.jpeg" alt="Clash of Clans Developer Banner" width="60%" style="border-radius: 10px;">
+</div>
 ---
 
 ## 🏰 About The Chief Developer
