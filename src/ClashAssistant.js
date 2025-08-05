@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import "./App.css";
 import { Trophy, Sword, Shield, Star, Users, Building, X } from 'lucide-react';
 
 const ClashAssistant = () => {
@@ -39,21 +38,24 @@ const ClashAssistant = () => {
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('touchstart', handleTouchOrClick);
-    // window.addEventListener('click', handleTouchOrClick);
 
     return () => {
       clearTimeout(timer);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('touchstart', handleTouchOrClick);
-      // window.removeEventListener('click', handleTouchOrClick);
     };
   }, [boxHidden]);
+
+  const getDayOfWeek = () => {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[new Date().getDay()];
+  };
 
   const sectionContent = {
     hero: {
       icon: <Trophy className="text-yellow-500" />,
       title: "Welcome Chief's Ally!",
-      description: "Ready to explore chief's Journey filled with Ups and Downs? Our chief achieved Town Hall 12, and have more to explore."
+      description: `Hey visitor, it's ${getDayOfWeek()} here! Ready to explore chief's Journey filled with Ups and Downs? Our chief achieved Town Hall 12, and have more to explore.`
     },
     stats: {
       icon: <Star className="text-yellow-500" />,

@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { ChevronDown, X } from "lucide-react";
+import { ChevronDown, X, Clock } from "lucide-react";
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getDatabase, ref, onValue, set, get } from "firebase/database";
@@ -11,6 +11,38 @@ function Header() {
   const [raidCount, setRaidCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  // Update time every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  // Format time for display
+  const formatTime = (date) => {
+    return date.toLocaleTimeString('en-US', {
+      hour12: true,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+  };
+
+  // Format date for display
+  const formatDate = (date) => {
+    const day = String(date.getDate()).padStart(2, '0');
+    const months = [
+      'Jan', 'Feb', 'March', 'April', 'May', 'June',
+      'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
+    ];
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
+    return `${day}, ${month} ${year}`;
+  };
 
   // Format count function to handle scaling
   const formatCount = (count) => {
@@ -175,6 +207,48 @@ function Header() {
       <header className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-black/60" />
 
+        {/* COC Clock Tower Widget */}
+        <div className="absolute top-1 left-3 z-20">
+          <div className="relative w-16 h-14">
+            {/* Clock Tower Base */}
+            <div className="absolute bottom-0 w-16 h-12 bg-gradient-to-b from-stone-400 via-stone-500 to-stone-600 rounded-sm shadow-lg border-2 border-stone-300">
+              {/* Stone texture lines */}
+              <div className="absolute inset-1 border border-stone-400 rounded-sm opacity-50"></div>
+              <div className="absolute top-2 left-1 right-1 h-px bg-stone-600"></div>
+              <div className="absolute top-4 left-1 right-1 h-px bg-stone-600"></div>
+              
+              {/* Clock face */}
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-gradient-to-br from-amber-200 to-amber-300 rounded-full border-2 border-yellow-600 shadow-inner">
+                <div className="absolute inset-0.5 border border-yellow-500 rounded-full opacity-60"></div>
+                {/* Time display */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-xs">
+                  <div className="text-amber-900 font-bold leading-none text-[12px] mt-1">
+                    {formatTime(currentTime).split(':')[0]}:{formatTime(currentTime).split(':')[1]}
+                  </div>
+                  <div className="text-amber-800 font-semibold text-[8px] -mt-0.5">
+                    {formatTime(currentTime).split(' ')[1]}
+                  </div>
+                </div>
+              </div>
+
+              
+            </div>
+
+
+
+            {/* Date banner */}
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 px-1 py-1 rounded-md border-2 border-yellow-400 shadow-lg whitespace-nowrap">
+              <div className="text-yellow-100 font-bold text-[12px] text-center leading-none">
+                {formatDate(currentTime)}
+              </div>
+            </div>
+
+
+            {/* Subtle glow */}
+            <div className="absolute inset-0 bg-yellow-400 opacity-10 blur-md rounded-lg -z-10"></div>
+          </div>
+        </div>
+
         {/* Clash of Clans Popup */}
         {showPopup && (
           <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -221,8 +295,7 @@ function Header() {
                 <button
                   className="clash-btn clash-btn-confirm"
                   onClick={navigateToGitHub}
-                >
-                  Continue to GitHub
+                  >
                 </button>
               </div>
             </div>
