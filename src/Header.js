@@ -1,11 +1,14 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { ChevronDown, X, Clock } from "lucide-react";
+import { ChevronDown, X, Clock, Eye, EyeIcon } from "lucide-react";
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getDatabase, ref, onValue, set, get } from "firebase/database";
 import { BiTrendingUp } from "react-icons/bi";
 import goblin from "./img/goblin.png";
+import { BsEyeSlashFill } from "react-icons/bs";
+import { GiEyeShield, GiEyeTarget, GiSpyglass } from "react-icons/gi";
+import { FaUserSecret } from "react-icons/fa";
 
 function Header() {
   const [raidCount, setRaidCount] = useState(0);
@@ -304,8 +307,8 @@ function Header() {
 
         {/* Visitor Counter */}
         <div className="absolute top-4 right-4 z-20 flex items-center gap-2 px-4 py-2 rounded-full shadow-lg hover:scale-95 transition-all duration-300 overflow-hidden wave-glass-bg">
-          <div className="flex items-center gap-1 bg-yellow-500 p-1.5 rounded-full z-10">
-            <BiTrendingUp className="w-4 h-4 text-blue-900" />
+          <div className="flex items-center gap-1 bg-yellow-500 p-1 rounded-full z-10">
+            <EyeIcon className="w-5 h-5 text-blue-900" />
           </div>
           <div className="flex flex-col items-start z-10">
             <span className="text-lg font-bold flex items-center">
@@ -318,12 +321,12 @@ function Header() {
                   {formatCount(raidCount)}
                 </span>
               )}
-              <span className="text-white/90 text-xs ml-1 uppercase tracking-wider font-semibold">
-                chiefs
+              <span className="text-white/90 text-xs ml-1  tracking-wider font-semibold">
+                Spectators
               </span>
             </span>
             <span className="text-white/70 text-xs -mt-1">
-              visited your village
+              scouted your village!
             </span>
           </div>
         </div>
