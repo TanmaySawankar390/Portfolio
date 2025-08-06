@@ -299,6 +299,7 @@ function Header() {
                   className="clash-btn clash-btn-confirm"
                   onClick={navigateToGitHub}
                   >
+                  Continue to GitHub
                 </button>
               </div>
             </div>
