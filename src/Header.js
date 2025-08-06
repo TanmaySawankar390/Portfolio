@@ -341,7 +341,7 @@ function Header() {
           </div>
 
           {/* Resource Bar - Clash of Clans Style Resource Icons */}
-          <div className="flex gap-12 items-center">
+          <div className="flex gap-2 items-center">
             {/* GitHub Base (Gold Coin) */}
             <div
               onClick={() => handleResourceClick("github")}
